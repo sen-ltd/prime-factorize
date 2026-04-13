@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>素因数分解 — Prime Factorize</title>
+  <meta name="description" content="素因数分解・約数・オイラーのφ・完全数判定など、数論の基本関数をブラウザで計算 / Prime factorization and number theory tool." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-title">
+        <h1 data-i18n="title">素因数分解</h1>
+        <p class="subtitle" data-i18n="subtitle">数論ツール</p>
+      </div>
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" title="Toggle theme">🌙</button>
+        <button id="lang-btn" class="icon-btn">EN</button>
+      </div>
+    </header>
+
+    <!-- Input card -->
+    <div class="card">
+      <div class="input-row">
+        <div class="input-group">
+          <label for="input-n" data-i18n="inputLabel">整数を入力</label>
+          <input
+            id="input-n"
+            type="text"
+            inputmode="numeric"
+            class="number-input"
+            data-i18n="inputPlaceholder"
+            placeholder="例: 360"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <div class="input-group" style="max-width:220px">
+          <label for="input-n2" data-i18n="secondLabel">第2の数（GCD / LCM 用）</label>
+          <input
+            id="input-n2"
+            type="text"
+            inputmode="numeric"
+            class="number-input"
+            data-i18n="secondPlaceholder"
+            placeholder="例: 24"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button id="analyze-btn" class="btn btn-primary" data-i18n="analyze">分析</button>
+        <button id="clear-btn" class="btn btn-ghost" data-i18n="clear">クリア</button>
+      </div>
+
+      <!-- Quick examples -->
+      <div class="examples">
+        <span class="examples-label">例:</span>
+        <button class="example-btn" data-n="2">2</button>
+        <button class="example-btn" data-n="1">1</button>
+        <button class="example-btn" data-n="360">360</button>
+        <button class="example-btn" data-n="1024">1024</button>
+        <button class="example-btn" data-n="9973">9973</button>
+        <button class="example-btn" data-n="6" data-m="28">6 &amp; 28</button>
+        <button class="example-btn" data-n="496">496 ✦</button>
+        <button class="example-btn" data-n="8128">8128 ✦</button>
+        <button class="example-btn" data-n="999999937">999999937</button>
+        <button class="example-btn" data-n="9007199254740881">9007199254740881</button>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <div id="error-msg" class="error-msg" hidden></div>
+
+    <!-- Results -->
+    <section id="results" hidden>
+      <!-- Number properties grid -->
+      <div class="card">
+        <div class="section-heading" data-i18n="factorization">素因数分解</div>
+        <div id="result-grid" class="result-grid"></div>
+      </div>
+
+      <!-- Factorization tree -->
+      <div class="card">
+        <div class="section-heading" data-i18n="treeTitle">因数分解ツリー</div>
+        <div id="tree-container" class="tree-container"></div>
+      </div>
+    </section>
+
+    <!-- History -->
+    <div class="card">
+      <div class="history-header">
+        <div class="section-heading" style="margin-bottom:0" data-i18n="historyTitle">履歴</div>
+        <button id="history-clear-btn" class="btn btn-ghost btn-xs" data-i18n="historyClear">履歴をクリア</button>
+      </div>
+      <ul id="history-list" class="history-list"></ul>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
