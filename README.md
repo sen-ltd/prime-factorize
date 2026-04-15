@@ -48,3 +48,10 @@ Primality of large numbers uses a deterministic Miller-Rabin test with 12 witnes
 ## License
 
 MIT © 2026 SEN LLC (SEN 合同会社)
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/prime-factorize/
+- 📝 dev.to: https://dev.to/sendotltd/prime-factorization-with-deterministic-miller-rabin-up-to-1024-2jj
+<!-- /sen-publish:links -->
